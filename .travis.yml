@@ -4,7 +4,9 @@ php:
 before_install:
 - openssl aes-256-cbc -K $encrypted_fee1ab4be628_key -iv $encrypted_fee1ab4be628_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
 - composer install
+- echo -e "Host 119.29.240.215\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 after_success:
 - ssh ubuntu@119.29.240.215 'cd /mnt/www && git clone git@github.com:TIGERB/travis-test.git'
