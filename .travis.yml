@@ -1,7 +1,6 @@
 language: php
 php:
-- '5.5'
-- '5.4'
+- '7.1'
 before_install:
 - openssl aes-256-cbc -K $encrypted_fee1ab4be628_key -iv $encrypted_fee1ab4be628_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
